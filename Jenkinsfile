@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools{
-        maven 'MAVEN'
+        maven 'MAVEN3'
     }
     stages{
         stage('Build Maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/vuddanti-15/devops-automation.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/naren-21/devops-automation.git']]])
                 sh 'mvn clean install'
             }
         }
